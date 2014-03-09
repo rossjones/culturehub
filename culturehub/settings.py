@@ -68,8 +68,16 @@ DATABASES = {
     }
 }
 
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR,'templates'),
+)
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
+TEMPLATE_LOADERS = ('django.template.loaders.filesystem.Loader',
+ 'django.template.loaders.app_directories.Loader')
+
 
 LANGUAGE_CODE = 'en-us'
 
@@ -84,5 +92,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
-
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "media"),
+)

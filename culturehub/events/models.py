@@ -1,6 +1,7 @@
 from django.db import models
 
 from culturehub.places.models import Place
+from culturehub.categories.models import Category
 
 class Event(models.Model):
 
@@ -12,3 +13,5 @@ class Event(models.Model):
     end_date = models.DateTimeField(auto_now_add=False)
     image_thumb = models.URLField(null=True, blank=True)
     image = models.URLField(null=True, blank=True)
+
+    categories = models.ManyToManyField(Category, null=True)
